@@ -1,1 +1,1 @@
-![My Image](alternatuneCover.png)
+![My Image](alternatuneCover.jpg)
