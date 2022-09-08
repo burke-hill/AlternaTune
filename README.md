@@ -1,1 +1,3 @@
-Music social media app using MEAN stack
+#Music social media app using MEAN stack
+
+![alt text](alternatuneCover.png "Title")
