@@ -4,7 +4,7 @@ import { UserService } from 'src/app/shared/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Router } from '@angular/router';
-import { Token } from '@angular/compiler';
+import { json } from 'express';
 
 @Component({
   selector: 'app-sign-in',
@@ -31,10 +31,15 @@ export class SignInComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.userService.login(form.value).subscribe(
       res => {
-        this.router.navigateByUrl('/about');
 
+
+        var testdata = JSON.stringify(res);
+        var json = JSON.parse(testdata);
+        this.userService.setToken(json);
+        this.router.navigateByUrl('/profile');
       },
       err => {
+
         console.log("Error");
       }
     );

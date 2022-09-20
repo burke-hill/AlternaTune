@@ -22,6 +22,7 @@ export class UserService {
   }
 
   login(authCredentials: User) {
+    console.log(authCredentials);
     return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
   }
 
