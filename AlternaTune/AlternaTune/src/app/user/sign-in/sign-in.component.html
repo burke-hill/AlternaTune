@@ -29,12 +29,13 @@
           </div>
 
           <!-- Submit button -->
-            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
-              in</button>
+          <input type="submit"  class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" value="Log In">
             <a href="/signup" class="center" style="text-align:center; color:gray">Register</a>
-
-
         </form>
+
+        <div class="success" *ngIf="showSuccessMessage">
+          Saved Successfully
+        </div>
       </div>
     </div>
   </div>

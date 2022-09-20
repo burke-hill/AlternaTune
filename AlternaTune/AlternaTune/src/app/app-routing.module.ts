@@ -7,6 +7,7 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
+
 const routes: Routes = [
   { path: 'forgot', component: ForgotComponent},
   { path: 'signup', component: SignUpComponent},

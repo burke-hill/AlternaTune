@@ -13,7 +13,10 @@ import { Token } from '@angular/compiler';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService, private router: Router) { }
+
+  showSuccessMessage: boolean;
+  serverErrorMessages: string;
 
   model = {
 
@@ -26,7 +29,15 @@ export class SignInComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log("Hello");
+    this.userService.login(form.value).subscribe(
+      res => {
+        this.router.navigateByUrl('/about');
+
+      },
+      err => {
+        console.log("Error");
+      }
+    );
   }
 
 }
