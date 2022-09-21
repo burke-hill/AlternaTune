@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
 
 
 const ctrlUser = require('../controllers/user.controller');
+const jwtHelper = require('../config/jwtHelper');
 
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
-router.post('/profile', fun1, ctrlUser, userProfile);
+router.get('/profile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
 module.exports = router;
