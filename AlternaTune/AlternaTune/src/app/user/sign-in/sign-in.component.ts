@@ -35,7 +35,8 @@ export class SignInComponent implements OnInit {
 
         var testdata = JSON.stringify(res);
         var json = JSON.parse(testdata);
-        this.userService.setToken(json);
+        console.log(json.token);
+        this.userService.setToken(json.token);
         this.router.navigateByUrl('/profile');
       },
       err => {
