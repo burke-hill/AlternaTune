@@ -3,17 +3,21 @@ const localStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 
 
+
+
 var User = mongoose.model('user');
 
 passport.use(
     new localStrategy({ usernameField: 'username'},
         (username, password, done) => {
-            User.findOne(
+            User.findOne({ username: username},
+                
                 (err, user) => {
                     if (err) {
                         return done(err);
                     }
                     else if (!user) {
+                        console.log("No username");
                         return done(null, false, {message: 'No such username'});
                     }
                     else if (!user.verifyPassword(password)) {
