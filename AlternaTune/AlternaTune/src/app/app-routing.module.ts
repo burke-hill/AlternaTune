@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: ContentComponent },
   { path: 'about', component: AboutComponent },
   { path: 'sign-in', component: SignInComponent},
-  { path: 'profile', component: UserProfileComponent},
+  { path: 'profile', component: UserProfileComponent, canActivate:[AuthGuard]},
   { path: '**', component: PageNotFoundComponent },
 ];
 

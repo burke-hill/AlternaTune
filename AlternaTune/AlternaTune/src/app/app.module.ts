@@ -17,6 +17,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { AuthGuard } from './auth/auth.guard';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserService, AuthGuard],
+  providers: [UserService, AuthGuard, AuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
