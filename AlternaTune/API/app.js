@@ -2,7 +2,7 @@ require('./config/config')
 require('./models/db');
 require('./config/passportConfig');
 
-
+// import nonsense
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -20,6 +20,7 @@ const user = require('./models/user.model');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
 
 app.use(logger('dev'));
 app.use(express.json());
